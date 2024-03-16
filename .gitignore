@@ -1,0 +1,11 @@
+# PyCharm IDE files
+.idea/*
+
+# General python project ignores
+__pycache__
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+ENV/
