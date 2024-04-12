@@ -5,7 +5,7 @@ __1. Introduction to end-to-end analytics using Microsoft Fabric (MF)__
 - Fabric provides a set of integrated services that enable you to ingest, store, process, and analyze data in a single environment.
 - Fabric is a unified software-as-a-service (SaaS) offering, with all your data stored in a single open format in OneLake.
 
-## OneLake
+**OneLake**
 - OneLake is Fabric's lake-centric architecture that provides a single, integrated environment for data professionals and the business to collaborate on data projects.
 - A key component of OneLake that allows you to read data from a single copy, without moving or duplicating data.
     - Fabric's data warehousing, data engineering (Lakehouses and Notebooks), data integration (pipelines and dataflows), real-time analytics, and Power BI all use OneLake as their native store without needing any extra configuration.
@@ -18,8 +18,20 @@ __1. Introduction to end-to-end analytics using Microsoft Fabric (MF)__
     - Data Factory: data integration combining Power Query with the scale of Azure Data Factory to move and transform data.
     - Power BI: business intelligence for translating data to decisions.
 ![OneLake Storage](./onelake-storage.png)
-- Fabric is built on Power BI and Azure Data Lake Storage, and includes capabilites from Azure Synapse Analytics, Azure Data Factory, Azure Databricks, and Azure Machine Learning.
+- Fabric is built on Power BI and Azure Data Lake Storage, and includes capabilities from Azure Synapse Analytics, Azure Data Factory, Azure Databricks, and Azure Machine Learning.
 
-__2. Get started with lakehouses in MF__
+__2. Get started with lake-houses in MF__
+- A lakehouse is a unified platform that combines:
+  - The flexible and scalable storage of a data lake
+  - The ability to query and analyze data of a data warehouse
+- Can use a lakehouse as the basis of an end-to-end data analytics solution that includes data ingestion, transformation, modeling, and visualization.
+- A shortcut enables to include external (Azure Data Lake Store Gen2) data in the lakehouse.
+- Data ingestion can also be automated using Data Factory Pipelines or Dataflows (Gen2).
+  - Dataflows (Gen2) are based on Power Query. The familiar tool to data analysts using Excel or Power BI that provides visual representation of transformations as an alternative to traditional programming.
+- Data Factory Pipelines can be used to orchestrate Spark, Dataflow, and other activities --> enabling to implement complex data transformation processes.
+- After transforming the data, you can query it using SQL, use it to train machine learning models, perform real-time analytics, or develop reports in Power BI.
+- [Hands-on Lab: Create and Ingest Data with Fabric Lakehouse](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/01-lakehouse.html)
+
 __3. Use Apache Spark in MF__
+
 __4. Work with Delta Lake tables in MF__
