@@ -33,5 +33,14 @@ __2. Get started with lake-houses in MF__
 - [Hands-on Lab: Create and Ingest Data with Fabric Lakehouse](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/01-lakehouse.html)
 
 __3. Use Apache Spark in MF__
+- Apache Spark is an open source parallel processing framework for large-scale data processing and analytics.
+- Spark uses a "divide and conquer" approach to processing large volumes of data quickly by distributing the work across multiple computers.
+- In most scenarios, the default settings provide an optimal configuration for Spark in Microsoft Fabric.
+- The Parquet format is typically preferred for data files that you will use for further analysis or ingestion into an analytical store.
+- Partitioning is an optimization technique that enables Spark to maximize performance across the worker nodes. More performance gains can be achieved when filtering data in queries by eliminating unnecessary disk IO.
+- The Spark catalog supports tables based on files in various formats:
+  - The preferred format in MF is `delta`, which is the format for a relational data technology on Spark named Delta Lake.
+- [Hands-on Lab: Analyze data with Apache Spark](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/02-analyze-spark.html)
+
 
 __4. Work with Delta Lake tables in MF__
