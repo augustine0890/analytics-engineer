@@ -42,5 +42,16 @@ __3. Use Apache Spark in MF__
   - The preferred format in MF is `delta`, which is the format for a relational data technology on Spark named Delta Lake.
 - [Hands-on Lab: Analyze data with Apache Spark](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/02-analyze-spark.html)
 
-
 __4. Work with Delta Lake tables in MF__
+- Tables in a MF lakehouse are based on the Linux foundation Delta Lake table format.
+- Delta Lake is an open-source storage layer for Spark that enables relational database capabilities for batch ans streaming data.
+- Delta tables are schema abstractions over data files that are stored in Delta format. For each table, the lakehouse stores a folder containing Parquet data files and a _delta_Log folder in which transaction details are logged in JSON format.
+- The benefits of using Delta tables:
+  - Relational tables that support querying and data modification.
+  - Support for ACID transactions
+  - Data versioning and time travel
+  - Support for batch and streaming data
+  - Standard formats and interoperability.
+- A typical stream processing solution involves constantly reading a stream of data from source, optionally processing it to select specific fields, aggregate and group values, or otherwise manipulate the data, and writing the results to a sink.
+  - You could capture a stream of real time data from an IoT device and write the stream directly to a delta as a sink - enabling you to query the table to see the latest streamed data.
+- [Hands-on Lab: Use delta tables in Apache Spark](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/03-delta-lake.html)
