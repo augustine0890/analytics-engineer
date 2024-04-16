@@ -70,3 +70,17 @@ __5. Use Data Factory pipelines in MF__
 - Use the `Data Flow` activity to run a dataflow (Gen2) to apply transformations to the data, or merge data from multiple sources.
 - The run history details show the time taken for each activity (optionally as s Gantt chart)
 - [Hands-on Lab: Ingest data with a pipeline](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/04-ingest-pipeline.html)
+
+__6. Ingest Data with Dataflows Gen2__
+- Dataflows Gen2 allow you to prepare the data to ensure consistency, and then stage the data in the preferred destination. They also enable reuse and make it easy to update the data.
+- Data Factory and Power BI workloads allow Dataflow Gen2 creation
+- `Dataflows` are a type of cloud-based ETL tool for building and executing scalable data transformation processes.
+- `Dataflows Gen2` allow you to extract data from various sources, transform it using a wide range of transformation operations, and load i into a destination. Using Power Online also allows for a visual interface to perform these tasks.
+- Dataflows can be horizontally partitioned as well. Once you create a global dataflow, data analysts can use dataflows to create specialized semantic models for specific needs.
+- Limitations:
+  - Not a replacement for a data warehouse
+  - Row-level security isn't supported
+  - Fabric capacity workspace is required.
+- [Hands-on Lab: Create and use a Dataflow Gen2 in Microsoft Fabric](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/05-dataflows-gen2.html)
+- Connect to Data Factory workload --> Create Dataflows Gen2 to transform data --> Create Data pipeline to include your dataflow and then land data to a KQL Database.
+- Power Query Online offers a visual interface to perform complex data transformations without writing any code.
