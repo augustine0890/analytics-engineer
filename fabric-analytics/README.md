@@ -55,3 +55,18 @@ __4. Work with Delta Lake tables in MF__
 - A typical stream processing solution involves constantly reading a stream of data from source, optionally processing it to select specific fields, aggregate and group values, or otherwise manipulate the data, and writing the results to a sink.
   - You could capture a stream of real time data from an IoT device and write the stream directly to a delta as a sink - enabling you to query the table to see the latest streamed data.
 - [Hands-on Lab: Use delta tables in Apache Spark](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/03-delta-lake.html)
+
+__5. Use Data Factory pipelines in MF__
+- Data pipelines define a sequence of activities that orchestrate an overall process, usually by extracting data from one or more sources and loading it into a destination. Pipelines are commonly used to automate extract, transform, and load (ETL) processes that ingest transactional data from operational data stores into an analytical data store, such as a lakehouse or data warehouse.
+- Activities: the executable tasks in a pipelines. You can define a flow of activities by connecting them in a sequence.
+  - The outcome of a particular activity (success, failure, or completion) can be used to direct the flow to the next activity in the sequence.
+  - Data transformation activities: encapsulate data transfer operations, including simple Copy Data activities that extract data from a source and load it to a destination, and more complex Data Flow activities that encapsulate dataflows (Gen2) that apply transformations to the data as it is transferred.
+  - Control flow activities: you can use to implement loops, conditional branching, or manage variable and parameter values.
+- Parameters: enabling you to provide specific values to be used each time a pipeline is run.
+  - You might want to use a pipeline to save ingested data in a folder, but have the flexibility to specify a folder name each time the pipeline is run.
+- Pipeline runs: A data pipeline run is initiated, runs can be initiated on-demand in the Fabric user interface or scheduled to start at a specific frequency.
+  - Use the unique run ID to review run details to confirm they completed successfully and investigate the specific settings used for each execution.
+- Use the `Copy Data` activity when you need to copy data directly between a supported source and destination without applying any transformations, or when you want to import the raw data and apply transformations in later pipeline activities.
+- Use the `Data Flow` activity to run a dataflow (Gen2) to apply transformations to the data, or merge data from multiple sources.
+- The run history details show the time taken for each activity (optionally as s Gantt chart)
+- [Hands-on Lab: Ingest data with a pipeline](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/04-ingest-pipeline.html)
