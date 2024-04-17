@@ -84,3 +84,13 @@ __6. Ingest Data with Dataflows Gen2__
 - [Hands-on Lab: Create and use a Dataflow Gen2 in Microsoft Fabric](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/05-dataflows-gen2.html)
 - Connect to Data Factory workload --> Create Dataflows Gen2 to transform data --> Create Data pipeline to include your dataflow and then land data to a KQL Database.
 - Power Query Online offers a visual interface to perform complex data transformations without writing any code.
+
+__7. Ingest data with Spark and MF notebooks__
+- Fabric notebooks offer automation and a comprehensive solution for ingestion and transformation. Fabric notebooks use a Spark engine to allow a multithreaded, distributed transaction for speedy processes.
+- Lakehouse support structured, semi-structured, and unstructured files and Delta tables. Optimize Delta table configuration for more performant reads and writes.
+- While prior to Spark or notebook experience is helpful, it's not mandatory. They are the best choice if you: handle large external data and need complex transformations
+- `V-Order` enables faster and more efficient reads by various compute engines, such as Power BI, SQL, and Spark. It applies special sorting, distribution, encoding, and compression on parquet files at write-time.
+- `V-Order` and `Optimize Write` enhance Delta tables by sorting data and creating fewer, larger Parquet files.
+- When you load data, it's good idea to do some basic cleaning like removing duplicates, handling errors, converting null vales, and getting rid of empty entries to ensure data quality and consistency.
+- Data scientists usually prefer fewer changes so they can explore wide tables. The Power BI data analysts my require more transformation and modeling before they can use the data.
+- [Hands-on Lab: Ingest data with Spark and Microsoft Fabric notebooks](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/10-ingest-notebooks.html)
