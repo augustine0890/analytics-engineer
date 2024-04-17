@@ -94,3 +94,35 @@ __7. Ingest data with Spark and MF notebooks__
 - When you load data, it's good idea to do some basic cleaning like removing duplicates, handling errors, converting null vales, and getting rid of empty entries to ensure data quality and consistency.
 - Data scientists usually prefer fewer changes so they can explore wide tables. The Power BI data analysts my require more transformation and modeling before they can use the data.
 - [Hands-on Lab: Ingest data with Spark and Microsoft Fabric notebooks](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/10-ingest-notebooks.html)
+
+__8. Organize Fabric Lakehouse using Medallion Architecture Design__
+- The medallion architecture brings structure and efficiency to your lakehouse environment. It has become a standard across the industry for lakehouse-based analytics.
+
+![Medallion Architecture](./lakehouse-medallion.png)
+- The medallion architecture is recommended data design pattern used to organize data in a lakehouse logically. It aims to improve data quality as it moves through different layers.
+- The architecture typically has three layers: bronze (raw), silver (validated), and gold (enriched), each representing higher data quality levels.
+- Bronze layer: raw layer of the medallion architecture is the first layer of the lakehouse. It's the landing zone for all data, whether it's structured, semi-structured, or unstructured. The data is stored in its original format, and no changes are made to it.
+  - Determine how you'll ingest data into your bronze layer. You can do this using pipelines, dataflows, or notebooks.
+- Silver layer: validated layer is the second layer of the lakehouse. Typical activities in the silver layer include combining and merging data and enforcing data validation rules like removing nulls and deduplicating.
+  - The silver layer can be thought of as a central repository across an organization or team, where data is stored in a consistent format and can be accessed by multiple teams.
+  - Cleaning your data enough so that everything is in one place and ready to be refined and modeled in the gold layer.
+- Gold layer: enriched layer is the third layer of the lakehouse. In the gold layer, data undergoes further refinement to align with specific business and analytics needs. This could involve aggregating data to a particular granularity, such as daily or hourly, or enriching it with external information.
+  - It becomes ready for use by downstream teams, including analytics, data science, or MLOps.
+  - You'll model your data for reporting using a dimensional model. You'll establish relationships, define measures, and incorporate any other elements essential for effective reporting.
+  - Depending on your needs, you might also use a Data Warehouse as your gold layer.
+- Notebooks are a more suitable tool for data transformation with big data in Fabric.
+- There are a few things to consider when deciding how to move and transform data across layers:
+  - How much data are you working with?
+  - How complex are the transformations you need to make?
+  - How often will you need to move data between layers?
+  - What tools are you most comfortable with?
+- Data orchestration refers to the coordination and management of multiple data-related processes, ensuring they work together to achieve a desired outcome. The primary tool for data orchestration in Fabric in _pipeline_.
+  - Pipeline can be automated to run on a schedule or triggered by an event.
+- Creating multiple Gold layers tailored for diverse audiences or domains highlights the flexibility of the medallion architecture. Finance, sales, data science – each can have its optimized Gold layer, serving specific analytical requirements.
+- Secure lakehouse:
+  - Security and Access Considerations: define who needs access at each layer, ensuring only authorized personnel can interact with sensitive data.
+  - Restrict access to the Gold, Bronze layer for read-only purposes, emphasizing the importance of minimal permissions.
+  -  Decide whether users will be allowed to build upon the Silver layer, balancing flexibility and security.
+- Continuous Integration and Continuous Delivery (CI/CD)
+  - CI/CD is crucial at the gold layer of a lakehouse because it ensures that high-quality, validated, and reliable data is available for consumption. Automated processes enable continuous integration of new data, data transformations, and updates, reducing manual errors and providing consistent and up-to-date insights to downstream users and applications. This enhances data accuracy, accelerates decision-making, and supports data-driven initiatives effectively.
+- [Hands-on Lab: Organize your Fabric lakehouse using a medallion architecture](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/03b-medallion-lakehouse.html)
