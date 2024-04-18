@@ -151,3 +151,19 @@ __9. Data Warehouses in MF__
 - A semantic model in the data warehouse experience provides a way to organize and structure data in a way that is meaningful to business users, enabling them to easily access and analyze data.
 - Item permissions: by granting access to a single data warehouse using item permissions, you can enable downstream consumption of data.
 - [Hands-on Lab: Analyze data in a data warehouse](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/06-data-warehouse.html)
+
+__10. Load Data into MF Data Warehouse__
+- Data warehouse in MF is powered up with Synapse Analytics by offering a rich set of features that make it easier to manage and analyze data.
+- ETL pipeline in a data warehouse:
+  - Data ingestion/extract is about moving raw data from various sources into a central repository.
+  - Data loading involves taking the transformed or processed data and loading it into the final storage destination for analysis and reporting.
+- Staging objects act as temporary storage and transformation areas.
+  - Staging servers as an abstraction layer, simplifying and facilitating the load operation to the final tables in the data warehouse.
+  - The Staging area provides a buffer that can help to minimize the impact of the load operation on the performance of the data warehouse.
+- Data pipeline is the cloud-based service for data integration, which enables the creation of workflows for data movement and data transformation at scale. You can create and schedule data pipelines that can ingest and load data from disparate data stores. You can build complex ETL, or ELT processes that transform data visually with data flows.
+  - Most of the functionality of data pipelines in Microsoft Fabric comes from Azure Data Factory, allowing for seamless integration and utilization of its features within the Microsoft Fabric ecosystem.
+- The Warehouse is powered by the same SQL engine they're familiar with, enabling them to perform complex queries and data manipulations. These operations include filtering, sorting, aggregating, and joining data from different tables. The SQL engine’s wide range of functions and operators further allows for sophisticated data analysis and transformations at the database level.
+- COPY (Transact-SQL) statement, date pipelines, dataflows, and cross-warehouse are the four data ingestion options available in MF for loading data into a data warehouse.
+- The COPY (Transact-SQL) statement currently supports the PARQUET and CSV file formats, and Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage as a data source.
+- When working with external data on files, we recommend the files are at least 4MB in size.
+- [Hands-on Lab: Load data into a warehouse in Microsoft Fabric](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/06a-data-warehouse-load.html)
