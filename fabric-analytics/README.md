@@ -167,3 +167,14 @@ __10. Load Data into MF Data Warehouse__
 - The COPY (Transact-SQL) statement currently supports the PARQUET and CSV file formats, and Azure Data Lake Storage (ADLS) Gen2 and Azure Blob Storage as a data source.
 - When working with external data on files, we recommend the files are at least 4MB in size.
 - [Hands-on Lab: Load data into a warehouse in Microsoft Fabric](https://microsoftlearning.github.io/mslearn-fabric/Instructions/Labs/06a-data-warehouse-load.html)
+
+__11. Use Tools to Optimize Power BI Performance__
+- The [Performance analyzer](https://learn.microsoft.com/en-us/power-bi/create-reports/desktop-performance-analyzer) helps you understand how report elements like visuals and DAX queries are performing.
+- The Performance analyzer helps you optimize at two of the four architecture levels, the data model and report visuals. The Performance analyzer is a great place to start when you're optimizing reports (investigating performance issues with visuals in a report).
+- [DAX Studio](https://daxstudio.org/) is an open-source tool for executing DAX queries against Power BI and Analysis Services models. DAX Studio is useful for:
+  - Reviewing the contents of your data model.
+  - Writing and optimizing complex DAX formulas and queries.
+- The Best Practice Analyzer (BPA) is a set of rules run in Tabular Editor that notify you of potential modeling missteps or changes that you can make to improve your model design and performance. It includes recommendations for naming, user experience, and common optimizations that you can apply to improve performance.
+-  The Best Practice Analyzer in Tabular Editor can be run manually or automated to ensure all models adhere to best practices.
+- [Hands-on Lab: Use tools to optimize Power BI performance](https://learn.microsoft.com/en-us/training/modules/use-tools-optimize-power-bi-performance/5-exercise)
+- To optimize a slow report, you can run the Performance analyzer to measure how each of the report elements performs when users interact with them. From there, you can dig into DAX query performance in DAX Studio, where you can view, sort, and filter performance data. You can also troubleshoot single measures or queries and/or evaluate the overall performance of your data model. To design data models proactively, you can use the Best Practice Analyzer rules in Tabular Editor to implement data modeling best practices as you go.
