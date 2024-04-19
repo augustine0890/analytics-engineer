@@ -178,3 +178,17 @@ __11. Use Tools to Optimize Power BI Performance__
 -  The Best Practice Analyzer in Tabular Editor can be run manually or automated to ensure all models adhere to best practices.
 - [Hands-on Lab: Use tools to optimize Power BI performance](https://learn.microsoft.com/en-us/training/modules/use-tools-optimize-power-bi-performance/5-exercise)
 - To optimize a slow report, you can run the Performance analyzer to measure how each of the report elements performs when users interact with them. From there, you can dig into DAX query performance in DAX Studio, where you can view, sort, and filter performance data. You can also troubleshoot single measures or queries and/or evaluate the overall performance of your data model. To design data models proactively, you can use the Best Practice Analyzer rules in Tabular Editor to implement data modeling best practices as you go.
+
+__12. Create and Manage Power BI Deployment Pipeline__
+- Pipelines enable a continuous integration/continuous deployment (CI/CD) approach that ensures content is updated, well-tested, and regularly refreshed and needed.
+- Using deployment pipelines leads to less manual work and fewer errors.
+- Development - design, review, and revise content in a development workspace
+  - Engage other creators on new content
+  - Use minimal semantic models. When it's ready to be tested and reviewed, deploy the content to the test stage.
+- Test – test and verify that the content is accurate in this preproduction workspace.
+  - Share content with testers and reviewers
+  - Load and run tests with larger volumes of data
+  - Test your app to see how it will look for your end users. When it’s ready to be distributed to your users, deploy the content to the production stage.
+- Production – the workspace content has been tested and is ready to be consumed by your users either in an app or by access to the production workspace.
+  - Share the final version of your content with business users across the organization
+- [Create Deployment Pipeline](https://learn.microsoft.com/en-us/training/modules/power-bi-deployment-pipelines/create-deployment-pipeline) --> [Assign Workspace](https://learn.microsoft.com/en-us/training/modules/power-bi-deployment-pipelines/assign-workspace) --> [Deploy Content](https://learn.microsoft.com/en-us/training/modules/power-bi-deployment-pipelines/deploy-content)
