@@ -1,0 +1,21 @@
+- Database: is a structured repository or collection of data that is stored and retrieved electronically for use in applications. Data can be stored, updated, or deleted from a database.
+- Data modeling (DM) is about how to structure data to be used by different people within an organization.
+  - Data engineers continually reorganize, restructure, and optimize data models to fit the needs of the organization.
+  - Process to support business and user applications --> gather requirements --> conceptual data modeling --> logical DM --> physical DM
+- Advantages of using a Relational Database:
+  - Ease of use SQL, ability to do JOINS
+  - Ability to do aggregations and analytics
+  - Smaller data volumes
+  - Easier to change business requirements
+  - Secondary Indexes available
+  - ACID Transactions, data integrity: guarantee validity even in the event of errors, power failures.
+    - Atomicity: the whole transaction is processed, or nothing is processed.
+    - Consistency: only transactions that abide by constraints and rules are written into the database. The data should be correct across all rows and tables.
+    - Isolation: transactions are processed independently and securely, order does not matter.
+    - Durability: completed transactions are saved to database even in cases of system failure.
+- When NOT to use a Relational Database
+  - Large amounts of data: not distributed databases and only scale vertically by adding more storage in machine.
+  - RDs are not designed to handle unstructured data.
+  - While ACID transactions bring benefits, they also slow down the process of reading and writing data.
+  - Flexible schema
+  - High availability and horizontal scalability.
