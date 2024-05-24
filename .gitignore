@@ -10,4 +10,7 @@ __pycache__
 venv/
 ENV/
 
+# Environment variables
+*.env
+
 .DS_Store
