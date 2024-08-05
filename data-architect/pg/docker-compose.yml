@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: aduser
+      POSTGRES_PASSWORD: adpassword
+      POSTGRES_DB: addb
+    ports:
+      - "5432:5432"
+    volumes:
+      - /Users/augustine/Documents/source/analytics-engineer/data-architect/pg:/var/lib/postgresql/new_data # Using a different directory
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin-container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: augustino0890@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+
+volumes:
+  pgdata:
+    driver: local
+    driver_opts:
+      type: none
+      device: /Users/augustine/Documents/source/analytics-engineer/data-architect/pg
+      o: bind
