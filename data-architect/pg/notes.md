@@ -14,4 +14,4 @@
     - Maintenance database: `addb`
     - Username: `aduser`
     - Password: `adpassword`
-If `host.docker.internal` doesn't work: `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgres-container`
+If `host.docker.internal` doesn't work: `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' postgres-container` your_password
