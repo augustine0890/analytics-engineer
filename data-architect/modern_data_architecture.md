@@ -1,0 +1,26 @@
+# Modern Data Architecture
+- Modern data architecture is an agile ans scalable system that efficiently manages and analyzes large and diverse datasets, enabling organizations to unlock valuable insights and make data-driven decisions.
+- Case study: Your company uses an event-based architecture, and all the events are stored within a single source of truth. The data science department would love to train a model to predict the probability of a customer abandoning your service. Thus, they asked the data engineering team to provide a table with historical information in a specific format. Your company currently uses a Kappa architecture for the data platform, hence processing all the data as a stream. Select the statement that describes the best approach to meet the data science team's requirement.
+    - Create a new flow for extracting the new data, and re-process the source of events to get the whole history.
+- Data Mesh: architectural approach to decentralized data ownership and management.
+    - Autonomous product teams.
+    - Multiple business units needs to share data while maintaining their own data management and enabling self-service consumption.
+- Data Fabric: architecture with a great focus on metadata analysis.
+    - Improve data management
+    - Integrate disparate systems and data sources to provide an unified view of data assets.
+- Blob storages are normally used across most data platforms, especially for being landing zones or intermediate storage.
+- Streaming Ingestion:
+    - Event Producer --write--> Event Queues (pub-sub, kinesis, kafka) --read--> Event Processing (Spark, Flink) --write--> Event S3, Redshift, BigQuery.
+- Landing zones as a getway for new data. They enable you to carry out further processing on your data, which can help you address quality issues and enrich it.
+- Data warehouse:
+    - Structure data, and need to create dashboards
+    - Structure, semi-structured data and need to perform analytical querying.
+- Blob storage:
+    - Unstructured data, and would like to train machine learning models.
+    - Need to archive it to the long term without much querying.
+- RDBMS: structured data, and need to expose it via an API with single record lookup capability.
+- Data governance is a set of rules that dicates how we treat our data in different stages of its life cycle. Nonetheless, it's critical to understand that these rules will require well-defined roles, processes, and tools that help with muanual overhead.
+- Metadata is one of the key enablers of data governance. It assists in organizing, accessing, and understanding data.
+- A data breach occurs when sensitive data is accessed, stolen, or leaked without authorization.
+    - To prevent data breaches: strong access controls, encryption, regular security checks (audits).
+- VPCs provide a highly secure, customizable environment where you can control the inbound and outbound network traffic.
