@@ -1,0 +1,108 @@
+/* Query-1 */
+/* Question 1: We want to identify the top 5 cities with the highest total rental revenue. This query aggregates rental revenue for each city, ranks them in descending order, and selects the top 5 cities. */
+
+WITH city_revenue AS (
+    SELECT
+        ci.city AS city_name,
+        SUM(p.amount) AS total_revenue
+    FROM payment p
+    JOIN rental r ON p.rental_id = r.rental_id
+    JOIN customer c ON r.customer_id = c.customer_id
+    JOIN address a ON c.address_id = a.address_id
+    JOIN city ci ON a.city_id = ci.city_id
+    GROUP BY ci.city
+),
+ranked_cities AS (
+    SELECT
+        city_name,
+        total_revenue,
+        RANK() OVER (ORDER BY total_revenue DESC) AS city_rank
+    FROM city_revenue
+)
+SELECT
+    city_name,
+    total_revenue,
+    city_rank
+FROM ranked_cities
+WHERE city_rank <= 5;
+
+/* Query-2 */
+/* Question 2: What are the top 5 most rented film categories, and how do their average rental durations compare on a separate scale? */
+
+WITH category_rentals AS (
+    SELECT
+        cat.name AS category_name,
+        COUNT(r.rental_id) AS rental_count,
+        AVG(f.rental_duration) AS avg_rental_duration
+    FROM rental r
+    JOIN inventory i ON r.inventory_id = i.inventory_id
+    JOIN film f ON i.film_id = f.film_id
+    JOIN film_category fc ON f.film_id = fc.film_id
+    JOIN category cat ON fc.category_id = cat.category_id
+    GROUP BY cat.name
+),
+ranked_categories AS (
+    SELECT
+        category_name,
+        rental_count,
+        avg_rental_duration,
+        RANK() OVER (ORDER BY rental_count DESC) AS category_rank
+    FROM category_rentals
+)
+SELECT
+    category_name,
+    rental_count,
+    avg_rental_duration,
+    category_rank
+FROM ranked_categories
+WHERE category_rank <= 5;
+
+/* Query-3 */
+/* Question 3: Which customers have rented the most films, and how much have they spent on a separate scale? */
+
+WITH customer_activity AS (
+    SELECT
+        c.first_name || ' ' || c.last_name AS customer_name,
+        COUNT(r.rental_id) AS total_rentals,
+        SUM(p.amount) AS total_spent
+    FROM customer c
+    JOIN rental r ON c.customer_id = r.customer_id
+    JOIN payment p ON r.rental_id = p.rental_id
+    GROUP BY c.first_name, c.last_name
+),
+ranked_customers AS (
+    SELECT
+        customer_name,
+        total_rentals,
+        total_spent,
+        RANK() OVER (ORDER BY total_rentals DESC) AS customer_rank
+    FROM customer_activity
+)
+SELECT
+    customer_name,
+    total_rentals,
+    total_spent,
+    customer_rank
+FROM ranked_customers
+WHERE customer_rank <= 5;
+
+/* Query-4 */
+/* Question 4: Which months have the highest average revenue per rental, and how do total rentals compare across these months? */
+
+WITH monthly_activity AS (
+    SELECT
+        DATE_PART('month', r.rental_date) AS rental_month,
+        COUNT(r.rental_id) AS total_rentals,
+        SUM(p.amount) AS total_revenue,
+        AVG(p.amount) AS avg_revenue_per_rental
+    FROM rental r
+    JOIN payment p ON r.rental_id = p.rental_id
+    GROUP BY rental_month
+)
+SELECT
+    rental_month,
+    total_rentals,
+    total_revenue,
+    avg_revenue_per_rental
+FROM monthly_activity
+ORDER BY rental_month;
